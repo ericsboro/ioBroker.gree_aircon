@@ -100,8 +100,7 @@
 				"name": "AC powered on",
 				"type": "boolean",
 				"read": true,
-				"write": true,
-				"def": false
+				"write": true
 			},
 			"native": {}
 		},
@@ -113,8 +112,7 @@
 				"name": "Lights on",
 				"type": "boolean",
 				"read": true,
-				"write": true,
-				"def": false
+				"write": true
 			},
 			"native": {}
 		},
@@ -126,8 +124,7 @@
 				"name": "Temperature",
 				"type": "number",
 				"read": true,
-				"write": true,
-				"def": -10
+				"write": true
 			},
 			"native": {}
 		},
@@ -136,11 +133,19 @@
 			"type": "state",
 			"common": {
 				"role": "",
-				"name": "Operationmode one of(auto, cool, heat, dry, fan_only)",
+				"name": "Operationmode one of(auto, cool, dry, fan_only, heat)",
 				"type": "number",
 				"read": true,
 				"write": true,
-				"def": "auto"
+				"min": "0",
+				"max": "4",
+				"states": {
+					"0": "auto",
+					"1": "cool",
+					"2": "dry",
+					"3": "fan_only",
+					"4": "heat"
+				}
 			},
 			"native": {}
 		},
@@ -149,11 +154,18 @@
 			"type": "state",
 			"common": {
 				"role": "",
-				"name": "Fan Speed one of(auto, low, mediumLow, medium, mediumHigh, high)",
+				"name": "Fan Speed one of(auto, low, medium, high)",
 				"type": "number",
 				"read": true,
 				"write": true,
-				"def": "auto"
+				"min": "0",
+				"max": "3",
+				"states": {
+					"0": "auto",
+					"1": "low",
+					"2": "medium",
+					"3": "high"
+				}
 			},
 			"native": {}
 		},
@@ -166,7 +178,14 @@
 				"type": "number",
 				"read": true,
 				"write": true,
-				"def": "off"
+				"min": "0",
+				"max": "3",
+				"states": {
+					"0": "off",
+					"1": "inside",
+					"2": "outside",
+					"3": "mode3"
+				}
 			},
 			"native": {}
 		},
@@ -213,12 +232,11 @@
 			"_id": "quiet",
 			"type": "state",
 			"common": {
-				"role": "",
+				"role": "level",
 				"name": "QuietMode (off, mode1, mode2, mode3)",
 				"type": "number",
 				"read": true,
-				"write": true,
-				"def": "noset"
+				"write": true
 			},
 			"native": {}
 		},

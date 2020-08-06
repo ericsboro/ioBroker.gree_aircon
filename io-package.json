@@ -134,17 +134,15 @@
 			"common": {
 				"role": "",
 				"name": "Operationmode one of(auto, cool, dry, fan_only, heat)",
-				"type": "number",
+				"type": "string",
 				"read": true,
 				"write": true,
-				"min": "0",
-				"max": "4",
 				"states": {
-					"0": "auto",
-					"1": "cool",
-					"2": "dry",
-					"3": "fan_only",
-					"4": "heat"
+					"auto": "auto",
+					"cool": "cool",
+					"dry": "dry",
+					"fan_only": "fan_only",
+					"heat": "heat"
 				}
 			},
 			"native": {}
@@ -155,16 +153,14 @@
 			"common": {
 				"role": "",
 				"name": "Fan Speed one of(auto, low, medium, high)",
-				"type": "number",
+				"type": "string",
 				"read": true,
 				"write": true,
-				"min": "0",
-				"max": "3",
 				"states": {
-					"0": "auto",
-					"1": "low",
-					"2": "medium",
-					"3": "high"
+					"auto": "auto",
+					"low": "low",
+					"medium": "medium",
+					"high": "high"
 				}
 			},
 			"native": {}
@@ -175,16 +171,14 @@
 			"common": {
 				"role": "",
 				"name": "Air selection, one of(off, inside, outside, mode3)",
-				"type": "number",
+				"type": "string",
 				"read": true,
 				"write": true,
-				"min": "0",
-				"max": "3",
 				"states": {
-					"0": "off",
-					"1": "inside",
-					"2": "outside",
-					"3": "mode3"
+					"off": "off",
+					"inside": "inside",
+					"outside": "outside",
+					"mode3": "mode3"
 				}
 			},
 			"native": {}
@@ -234,9 +228,15 @@
 			"common": {
 				"role": "level",
 				"name": "QuietMode (off, mode1, mode2, mode3)",
-				"type": "number",
+				"type": "string",
 				"read": true,
-				"write": true
+				"write": true,
+				"states": {
+					"off": "off",
+					"mode1": "mode1",
+					"mode2": "mode2",
+					"mode3": "mode3"
+				}
 			},
 			"native": {}
 		},

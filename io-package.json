@@ -138,11 +138,11 @@
 				"read": true,
 				"write": true,
 				"states": {
-					"auto": "auto",
-					"cool": "cool",
-					"dry": "dry",
-					"fan_only": "fan_only",
-					"heat": "heat"
+					"auto",
+					"cool",
+					"dry",
+					"fan_only",
+					"heat"
 				}
 			},
 			"native": {}
@@ -157,42 +157,11 @@
 				"read": true,
 				"write": true,
 				"states": {
-					"auto": "auto",
-					"low": "low",
-					"medium": "medium",
-					"high": "high"
+					"auto",
+					"low",
+					"medium",
+					"high"
 				}
-			},
-			"native": {}
-		},
-		{
-			"_id": "air",
-			"type": "state",
-			"common": {
-				"role": "",
-				"name": "Air selection, one of(off, inside, outside, mode3)",
-				"type": "string",
-				"read": true,
-				"write": true,
-				"states": {
-					"off": "off",
-					"inside": "inside",
-					"outside": "outside",
-					"mode3": "mode3"
-				}
-			},
-			"native": {}
-		},
-		{
-			"_id": "blow",
-			"type": "state",
-			"common": {
-				"role": "switch",
-				"name": "Blow",
-				"type": "boolean",
-				"read": true,
-				"write": true,
-				"def": false
 			},
 			"native": {}
 		},
@@ -219,24 +188,6 @@
 				"read": true,
 				"write": true,
 				"def": false
-			},
-			"native": {}
-		},
-		{
-			"_id": "quiet",
-			"type": "state",
-			"common": {
-				"role": "level",
-				"name": "QuietMode (off, mode1, mode2, mode3)",
-				"type": "string",
-				"read": true,
-				"write": true,
-				"states": {
-					"off": "off",
-					"mode1": "mode1",
-					"mode2": "mode2",
-					"mode3": "mode3"
-				}
 			},
 			"native": {}
 		},

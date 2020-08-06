@@ -138,11 +138,11 @@
 				"read": true,
 				"write": true,
 				"states": {
-					"auto",
-					"cool",
-					"dry",
-					"fan_only",
-					"heat"
+					"0": "auto",
+					"1": "cool",
+					"2": "dry",
+					"3": "fan_only",
+					"4": "heat"
 				}
 			},
 			"native": {}
@@ -157,10 +157,10 @@
 				"read": true,
 				"write": true,
 				"states": {
-					"auto",
-					"low",
-					"medium",
-					"high"
+					"0": "auto",
+					"1": "low",
+					"2": "medium",
+					"3": "high"
 				}
 			},
 			"native": {}

@@ -86,8 +86,6 @@ class GreeAircon extends utils.Adapter {
 			this.setStateAsync('fanSpeed', updatedProperties.fanSpeed, true);
 		if ('air' in updatedProperties)
 			this.setStateAsync('air', updatedProperties.air, true);
-		if ('blow' in updatedProperties)
-			this.setStateAsync('blow', updatedProperties.blow == 'on', true);
 		if ('health' in updatedProperties)
 			this.setStateAsync('health', updatedProperties.health == 'on', true);
 		if ('sleep' in updatedProperties)
@@ -178,29 +176,13 @@ class GreeAircon extends utils.Adapter {
 						break;
 					}
 					case 'fanSpeed': {
-						if (!['auto', 'low', 'mediumLow', 'medium', 'mediumHigh', 'high'].includes(state.val)) {
+						if (!['auto', 'low', 'medium', 'high'].includes(state.val)) {
 							this.log.error(`tried to set bad value for ${propName}:"${state.val}". Source:${state.from}`);
 							this.setStateAsync('fanSpeed', this.currentProperties.fanSpeed, true);//ack...
 							break;
 						}
 						this.Greeclient.setProperty(Gree.PROPERTY.fanSpeed, state.val);
 						this.setStateAsync('fanSpeed', state.val, true);//ack...
-						break;
-					}
-					case 'air': {
-						if (!['off', 'inside', 'outside', 'mode3'].includes(state.val)) {
-							this.log.error(`tried to set bad value for ${propName}:"${state.val}". Source:${state.from}`);
-							this.setStateAsync('air', this.currentProperties.air, true);//ack...
-							break;
-						}
-						this.Greeclient.setProperty(Gree.PROPERTY.air, state.val);
-						this.setStateAsync('air', state.val, true);//ack...
-						break;
-					}
-					case 'blow': {
-						const newVal = state.val ? Gree.VALUE.blow.on : Gree.VALUE.blow.off;
-						this.Greeclient.setProperty(Gree.PROPERTY.blow, newVal);
-						this.setStateAsync('blow', state.val, true);//ack...
 						break;
 					}
 					case 'health': {

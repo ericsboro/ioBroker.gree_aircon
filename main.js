@@ -90,8 +90,6 @@ class GreeAircon extends utils.Adapter {
 			this.setStateAsync('health', updatedProperties.health == 'on', true);
 		if ('sleep' in updatedProperties)
 			this.setStateAsync('sleep', updatedProperties.sleep == 'on', true);
-		if ('quiet' in updatedProperties)
-			this.setStateAsync('quiet', updatedProperties.quiet, true);
 		if ('turbo' in updatedProperties)
 			this.setStateAsync('turbo', updatedProperties.turbo == 'on', true);
 		if ('powerSave' in updatedProperties)
@@ -195,16 +193,6 @@ class GreeAircon extends utils.Adapter {
 						const newVal = state.val ? Gree.VALUE.sleep.on : Gree.VALUE.sleep.off;
 						this.Greeclient.setProperty(Gree.PROPERTY.sleep, newVal);
 						this.setStateAsync('sleep', state.val, true);//ack...
-						break;
-					}
-					case 'quiet': {
-						if (!['off', 'mode1', 'mode2', 'mode3'].includes(state.val)) {
-							this.log.error(`tried to set bad value for ${propName}:"${state.val}". Source:${state.from}`);
-							this.setStateAsync('air', this.currentProperties.quiet, true);//ack...
-							break;
-						}
-						this.Greeclient.setProperty(Gree.PROPERTY.quiet, state.val);
-						this.setStateAsync('quiet', state.val, true);//ack...
 						break;
 					}
 					case 'turbo': {

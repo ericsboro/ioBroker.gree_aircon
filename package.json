@@ -19,7 +19,7 @@
     "url": "https://github.com/weltmeyer/ioBroker.gree_aircon"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.4.0",
+    "@iobroker/adapter-core": "^1.0.3",
     "gree-hvac-client": "^1.2.7"
   },
   "devDependencies": {
